@@ -5,7 +5,7 @@ var PluginError = gutil.PluginError;
 const PLUGIN_NAME = 'gulp-opal';
 
 // Load Opal
-const OPAL_VERSION = '0.7.1';
+const OPAL_VERSION = '0.6.2';
 require('./lib/' + OPAL_VERSION + '/opal.min');
 require('./lib/' + OPAL_VERSION + '/opal-parser.min');
 
