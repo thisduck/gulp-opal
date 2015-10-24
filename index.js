@@ -1,13 +1,17 @@
 var through = require('through2');
 var gutil = require('gulp-util');
+var fs = require('fs');
+
 var PluginError = gutil.PluginError;
 
 const PLUGIN_NAME = 'gulp-opal';
 
 // Load Opal
 const OPAL_VERSION = '0.6.2';
-require('./lib/' + OPAL_VERSION + '/opal.min');
-require('./lib/' + OPAL_VERSION + '/opal-parser.min');
+filedata = fs.readFileSync('./lib/' + OPAL_VERSION + '/opal.min','utf8');
+eval(filedata);
+filedata = fs.readFileSync('./lib/' + OPAL_VERSION + '/opal-parser.min','utf8');
+eval(filedata);
 
 function gulpOpal(opt) {
     var stream = through.obj(function (file, enc, callback) {
