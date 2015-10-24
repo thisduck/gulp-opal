@@ -9,9 +9,9 @@ const PLUGIN_NAME = 'gulp-opal';
 // Load Opal
 const OPAL_VERSION = '0.6.2';
 var Opal = {};
-filedata = fs.readFileSync('./lib/' + OPAL_VERSION + '/opal.js','utf8');
+filedata = fs.readFileSync(__dirname + '/lib/' + OPAL_VERSION + '/opal.js','utf8');
 eval(filedata);
-filedata = fs.readFileSync('./lib/' + OPAL_VERSION + '/opal-parser.min.js','utf8');
+filedata = fs.readFileSync(__dirname + '/lib/' + OPAL_VERSION + '/opal-parser.min.js','utf8');
 eval(filedata);
 
 function gulpOpal(opt) {
